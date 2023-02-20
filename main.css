@@ -1,0 +1,209 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+:root {
+    --light-red: hsl(0, 100%, 67%);
+    --orange-yellow: hsl(39, 100%, 56%);
+    --green-teal: hsl(166, 100%, 37%);
+    --light-gray: hsl(222, 10%, 59%);
+    --light-slate-blue: hsl(252, 100%, 67%);
+    --light-royal-blue: hsl(241, 81%, 54%);
+    --violet-blue: hsla(256, 72%, 46%, 1);
+    --persian-blue: hsla(241, 72%, 46%, 0);
+    --white: hsl(0, 0%, 100%);
+    --pale-blue: hsl(221, 100%, 96%);
+    --light-lavender: hsl(241, 100%, 89%);
+    --dark-gray-blue: hsl(224, 30%, 27%);
+
+    --border-radius: 2.4rem;
+
+    --ff-primary: 'Hanken Grotesk', sans-serif;
+}
+
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.8rem;
+    font-family: var(--ff-primary);
+    background-color: var(--pale-blue);
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+main {
+    width: 100%;
+}
+
+.summary-card {
+    width: 100vw;
+    /* max-width: 72rem; */
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: 1px 1px 10px hsla(241, 72%, 46%, .05);
+}
+
+/* RESULTS */
+.result-stats {
+    border-radius: var(--border-radius);
+    background-image: linear-gradient(to bottom, var(--light-slate-blue), var(--light-royal-blue));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4.2rem 5rem;
+    text-align: center;
+}
+
+.result {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--light-lavender);
+}
+
+.score-num {
+    margin-block: 2.4rem 3rem;
+    width: 20rem;
+    height: 20rem;
+    border-radius: 100vmax;
+    background-image: linear-gradient(to top, var(--persian-blue), var(--violet-blue));
+    display: grid;
+    place-items: center;
+    place-content: center;
+}
+
+.score {
+    color: var(--white);
+    font-size: 5.6rem;
+    font-weight: 800;
+}
+
+.score-num span {
+    color: var(--light-lavender);
+}
+
+.result-text {
+    color: var(--white);
+    font-size: 3.2rem;
+    font-weight: 700;
+    margin-bottom: 1.6rem;
+}
+
+.explanation {
+    color: var(--light-lavender);
+    font-size: 1.6rem;
+    line-height: 1.4;
+    width: 32ch;
+}
+
+/* SUMMARY */
+.summary-stats {
+    padding: 4.2rem;
+}
+
+.summary-title{
+    color: var(--dark-gray-blue);
+    font-size: 2rem;
+}
+
+.summary-list {
+    margin-block: 2.8rem 3.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+}
+
+.summary-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.5rem;
+    border-radius: calc(var(--border-radius) / 1.75);
+}
+
+.summary-scope {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.score-wrapper {
+    color: var(--light-gray);
+    font-weight: 700;
+}
+
+.real-score {
+    color: var(--dark-gray-blue);
+}
+
+.summary-btn {
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: var(--border-radius);
+    background-color: var(--dark-gray-blue);
+    color: var(--white);
+    font-size: 1.6rem;
+    font-family: var(--ff-primary);
+    font-weight: 700;
+    padding-block: 1.6rem;
+}
+
+.summary-btn:hover {
+    background-color: transparent;
+    background-image: linear-gradient(to bottom, var(--light-slate-blue), var(--light-royal-blue));
+}
+
+.summary-item:nth-child(1) {
+    color: var(--light-red);
+    background-color: hsl(0 100% 67% / 0.05);
+}
+
+.summary-item:nth-child(2) {
+    color: var(--orange-yellow);
+    background-color: hsl(39 100% 56% / 0.05);
+}
+
+.summary-item:nth-child(3) {
+    color: var(--green-teal);
+    background-color: hsl(166 100% 37% / 0.05);
+}
+
+.summary-item:nth-child(4) {
+    color: var(--violet-blue);
+    background-color: hsl(256 72% 46% / 0.05);
+}
+
+@media screen and (min-width: 800px) {
+    main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+    .summary-card {
+        max-width: 72rem;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .explanation {
+        width: 24ch;
+    }
+}
